@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="17. Actividad. Audio y vídeo" />
+    <meta name="author" content="Claudio Lozano Pastrana"> 
+    <!--
+    TÍTULO DEL DOCUMENTO
+    Aparece en la pestaña del navegador
+  -->   
+    <title>17. Actividad. Audio y vídeo</title>
+      <!--
+    ESTILOS BÁSICOS PARA MEJOR PRESENTACIÓN
+    No afectan al funcionamiento de los reproductores
+  -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            padding: 30px;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        .bloque {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <body>
+  <!--
+    TÍTULO PRINCIPAL DEL EJERCICIO
+  -->
+<h1>17. Actividad. Audio y vídeo</h1>
+
+<!-- ===================== -->
+<!-- SELECCIÓN DE AUDIO    -->
+<!-- ===================== -->
+<h2>Reproductores de Audio</h2>
+
+<div class="bloque">
+  <h3>Audio desde mi hosting / ordenador</h3>
+  <p>(Reproduce un archivo alojado en tu servidor, por ejemplo en la carpeta "media")</p>
+ <!--
+    BLOQUE 1
+    Reproductor de audio desde archivo local / hosting propio
+    Este archivo debe estar en una carpeta del servidor o del proyecto,
+    por ejemplo: media/sample-audio.mp3
+  -->
+  <audio controls>
+      <!--
+        SRC apunta a un archivo local
+        El alumno debe colocar el archivo en la carpeta indicada
+      -->
+    <source src="media/Claudio.mp3" type="audio/mpeg">
+    Tu navegador no soporta el reproductor de audio.
+  </audio>
+</div>
+<!--
+    BLOQUE 2
+    Reproductor de audio desde fuente original (Audio Archive)
+    El archivo se reproduce directamente desde Internet
+  -->
+<div class="bloque">
+  <h3>Audio desde fuente original (Audio Archive)</h3>
+    <p>
+      Este reproductor reproduce un archivo MP3 directamente desde Archive.org
+      sin estar almacenado en el servidor local.
+    </p>
+  <audio controls>
+  
+    <source src="https://archive.org/download/don_quijote_vol1_0706_librivox/quijote_vol1_03_cervantes.mp3"  type="audio/mpeg">
+    Tu navegador no soporta el reproductor de audio.
+  </audio>
+</div>
+
+<!-- ===================== -->
+<!-- VIDEO -->
+<!-- ===================== -->
+<h2>Reproductores de Video</h2>
+  <!--
+    BLOQUE 3
+    Reproductor de video desde archivo local / hosting propio
+    Este archivo debe estar en una carpeta del servidor o del proyecto,
+    por ejemplo: media/sample-video.mp4
+  -->
+    <div class="bloque">
+    <h3>Video desde mi hosting / ordenador</h3>
+    <p>(Simula un archivo alojado en tu servidor, por ejemplo en la carpeta "media")</p>
+
+    <video width="400" controls>
+        <source src="media/mono.mp4" type="video/mp4">
+        Tu navegador no soporta el reproductor de video.
+    </video>
+    </div>
+
+    <div class="bloque">
+    <h3>Video desde fuente original (Moving Image Archive)</h3>
+
+    <video width="400" controls>
+        <source src="https://archive.org/download/rvtv-Lo_que_Rompeviento_se_llevo_-_Green_Book_Una_amistad_sin_fronteras/Lo_que_Rompeviento_se_llevo_-_Green_Book_Una_amistad_sin_fronteras.mp4" type="video/mp4">
+        Tu navegador no soporta el reproductor de video.
+    </video>
+    </div>
+</body>
+</html>

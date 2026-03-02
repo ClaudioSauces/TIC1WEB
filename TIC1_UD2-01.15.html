@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>15. Actividad. Mapas de imágenes I</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="15. Actividad. Mapas de imágenes I" />
+    <meta name="author" content="Claudio Lozano Pastrana">
+    <style>
+        .contenedor {
+            position: relative;
+            width: 300px;
+            height: 260px;
+            border: 1px solid #ccc;
+        }
+
+        .area {
+            position: absolute;
+            cursor: pointer;
+        }
+
+        /* Magenta magenta */
+        .magenta {
+            left: 105px;
+            top: 95px;
+            width: 20px;      /* 125 - 105 */
+            height: 112px;    /* 207 - 95 */
+            background-color: #8b0055;
+        }
+
+        /* Verde oscuro */
+        .verde-oscuro {
+            left: 126px;
+            top: 95px;
+            width: 89px;      /* 215 - 126 */
+            height: 22px;     /* 117 - 95 */
+            background-color: #006400;
+        }
+
+        /* Verde azul claro */
+        .azul-claro {
+            left: 128px;
+            top: 140px;
+            width: 87px;      /* 215 - 128 */
+            height: 21px;     /* 161 - 140 */
+            background-color: #8fd3f4;
+        }
+
+        .area:hover {
+            outline: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+
+    <a href="https://directorio.educa.jcyl.es/es/centros/2025/1-49000391-los-sauces"
+       target="_blank"
+       class="area magenta"
+       title="Los Sauces"></a>
+
+    <a href="https://www.lipsum.com/"
+       target="_blank"
+       class="area verde-oscuro"
+       title="Lorem Ipsum"></a>
+
+    <a href="https://es.wikipedia.org/wiki/ARPANET"
+       target="_blank"
+       class="area azul-claro"
+       title="ARPANET"></a>
+
+</div>
+
+</body>
+</html>

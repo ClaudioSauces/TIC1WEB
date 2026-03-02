@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="18. Actividad. Iframe." />
+    <meta name="author" content="Claudio Lozano Pastrana"> 
+    <meta charset="UTF-8">
+  <!--
+    TÍTULO DEL DOCUMENTO
+    Aparece en la pestaña del navegador
+  --> 
+    <title>18. Actividad. Iframe.</title>
+        <!--Resultado visual
+    Fila superior (100% ancho, verde) → FlexClip
+    Fila inferior:
+        Izquierda 25% (rosa) → iSpring
+        Derecha 75%, dividida en:
+            Arriba: amarillo (75% ancho) → YouTube Studio
+            Abajo:
+                Izquierda 50% (gris) → Flixier
+                Derecha 25% (marrón) → Reduct-->
+
+    <!--
+    ESTILOS CSS
+    Se usa Flexbox para dividir la pantalla en filas y columnas
+    siguiendo los porcentajes indicados en el enunciado
+  -->
+  <style>
+    /* Estilo general del cuerpo de la página */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /*
+      CONTENEDOR PRINCIPAL
+      Se organiza en columna para crear:
+      - Fila superior (25%)
+      - Fila inferior (75%)
+    */
+    .contenedor {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /*
+      FILA SUPERIOR - ZONA VERDE
+      Ocupa el 25% de la altura y el 100% del ancho
+    */
+    .fila-superior {
+      height: 25%;
+      background-color: #2e7d32;
+      border-bottom: 6px solid black;
+    }
+
+    /*
+      FILA INFERIOR
+      Se divide en dos columnas:
+      - Izquierda: 25% (rosa)
+      - Derecha: 75%
+    */
+    .fila-inferior {
+      display: flex;
+      height: 75%;
+    }
+
+    /*
+      ZONA ROSA
+      Ocupa el 25% del ancho de la fila inferior
+    */
+    .rosa {         /*Fila inferior izquierda */
+      width: 25%;
+      background-color: pink;
+      border-right: 6px solid black;
+    }
+
+    /*
+      COLUMNA DERECHA
+      Ocupa el 75% del ancho
+      Se divide en:
+      - Fila superior (amarillo)
+      - Fila inferior (gris y marrón)
+    */
+    .derecha {
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /*
+      ZONA AMARILLA
+      Ocupa el 50% de la altura de la columna derecha
+      (representa la zona del 75% del ancho total)
+    */
+    .amarillo {
+      height: 50%;
+      background-color: #fff3b0;
+      border-bottom: 6px solid black;
+    }
+
+    /*
+      FILA INFERIOR DERECHA 75%
+      Se divide en dos columnas:
+      - Gris: 75% del .inferior-derecha
+      - Marrón: 25%
+    */
+    .inferior-derecha {
+      display: flex;
+      height: 75%;
+    }
+
+    /*
+      ZONA GRIS
+      Ocupa el 50% del ancho de esta fila y el 66,67% de .inferior-derecha
+    */
+    .gris {
+      width: 67%;
+      background-color: #cccccc;
+      border-right: 6px solid black;
+    }
+
+    /*
+      ZONA MARRÓN
+      Ocupa el 25% del ancho de esta fila y el 33% de .inferior-derecha
+    */
+    .marron {
+      width: 33%;
+      background-color: #a97142;
+    }
+
+    /*
+      ETIQUETAS DE TEXTO
+      Muestran el nombre de la zona y su porcentaje
+  
+    .etiqueta {
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 8px;
+      text-align: center;
+      font-weight: bold;
+    }
+  */
+  
+    /*
+      ESTILO GENERAL DE LOS IFRAME
+      Ocupan todo el espacio disponible debajo de la etiqueta
+    */
+    iframe {
+      width: 100%;
+      /* height: calc(100% - 36px); */
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--
+    CONTENEDOR PRINCIPAL
+    Dentro se organizan todas las zonas del ejercicio
+  -->
+  <div class="contenedor">
+
+    <!--
+      ZONA VERDE - 100% DE ANCHO
+      Muestra la página de FlexClip mediante un iframe
+    -->
+    <div class="fila-superior">
+      <!-- <div class="etiqueta">ZONA VERDE - 100%</div> -->
+      <iframe 
+        src="https://www.flexclip.com/es/learn/cloud-based-video-editing.html">
+      </iframe>
+    </div>
+
+    <!--
+      FILA INFERIOR
+      Se divide en zona rosa (25%) y columna derecha (75%)
+    -->
+    <div class="fila-inferior">
+
+      <!--
+        ZONA ROSA - 25% DE ANCHO
+        Muestra la página de iSpring
+      -->
+      <div class="rosa">
+        <!-- <div class="etiqueta">ZONA ROSA - 25%</div> -->
+        <iframe 
+          src="https://www.ispring.es/blog/mejores-herramientas-de-autor-de-elearning-para-usar">
+        </iframe>
+      </div>
+
+      <!--
+        COLUMNA DERECHA - 75% DE ANCHO
+      -->
+      <div class="derecha">
+
+        <!--
+          ZONA AMARILLA
+          Muestra YouTube Studio
+        -->
+        <div class="amarillo">
+          <!-- <div class="etiqueta">ZONA AMARILLA - 75%</div> -->
+          <iframe 
+            src="https://studio.youtube.com/channel/UCfZYWAhJAlKn7tdvKLtlJGw">
+          </iframe>
+        </div>
+
+        <!--
+          FILA INFERIOR DERECHA
+          Se divide en gris (50%) y marrón (25%)
+        -->
+        <div class="inferior-derecha">
+
+          <!--
+            ZONA GRIS
+            Muestra Flixier
+          -->
+          <div class="gris">
+            <!-- <div class="etiqueta">ZONA GRIS - 50%</div> -->
+            <iframe 
+              src="https://flixier.com/">
+            </iframe>
+          </div>
+
+          <!--
+            ZONA MARRÓN
+            Muestra Reduct
+          -->
+          <div class="marron">
+            <!-- <div class="etiqueta">ZONA MARRÓN - 25%</div> -->
+            <iframe 
+              src="https://reduct.video/">
+            </iframe>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--
+    FIN DEL DOCUMENTO
+  -->
+
+</body>
+</html>

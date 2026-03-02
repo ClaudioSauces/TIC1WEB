@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="12. Actividad. URLs relativas" />
+        <meta name="author" content="Claudio Lozano Pastrana">
+        <title>12. Actividad. URLs relativas</title>
+  <style>
+    :root{
+      --bg:#0f172a;      /* slate-900 */
+      --panel:#111827;   /* gray-900 */
+      --text:#e5e7eb;    /* gray-200 */
+      --muted:#9ca3af;   /* gray-400 */
+      --accent:#f97316;  /* orange-500 */
+      --file:#10b981;    /* emerald-500 */
+      --border:#1f2937;  /* gray-800 */
+    }
+    * { box-sizing: border-box; }
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Noto Sans', 'Helvetica Neue', Arial;
+      background:linear-gradient(180deg, var(--bg), #0b1022 60%);
+      color:var(--text);
+      min-height:100vh;
+      display:grid; place-items:center;
+    }
+    .wrapper{
+      width:min(680px, 92vw);
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:14px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
+      padding:20px 18px 8px 18px;
+    }
+    .title{display:flex; align-items:center; gap:.6rem; font-weight:700; letter-spacing:.3px;}
+    .title .caret{rotate:90deg; color:var(--muted)}
+    .title .root{color:#c4b5fd} /* violet-300 */
+
+    .tree{ list-style:none; padding-left:1rem; margin:.4rem 0 1rem 0; }
+    .tree li{ position:relative; padding-left:1.2rem; margin:.2rem 0; }
+    .tree li::before{
+      content:""; position:absolute; left:.2rem; top:.9rem; width:.75rem; height:1px; background:var(--border);
+    }
+    .tree li::after{
+      content:""; position:absolute; left:.2rem; top:-.4rem; width:1px; height:1.6rem; background:var(--border);
+    }
+    .tree > li::after{ display:none; }
+
+    .dir, .file{ display:flex; align-items:center; gap:.45rem; }
+    .dir .icon{ color:var(--accent); }
+    .file .icon{ color:var(--file); }
+
+    .muted{ color:var(--muted); font-weight:500; }
+    .file code{ background:#0b1324; border:1px solid var(--border); padding:.08rem .35rem; border-radius:6px; }
+
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f3f4f6; --panel:#ffffff; --text:#111827; --muted:#6b7280; --border:#e5e7eb; }
+      body{ background:var(--bg); }
+      .file code{ background:#f8fafc; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrapper" aria-label="Árbol de directorios">
+    <div class="title" aria-level="1" role="heading">
+      <span class="caret">▸</span>
+      <span class="root">server</span>
+    </div>
+
+    <ul class="tree" role="tree">
+      <li role="treeitem" aria-expanded="true">
+        <div class="dir"><span class="icon">📁</span><span class="muted">ficheros</span></div>
+        <ul class="tree" role="group">
+          <li role="treeitem"><div class="file"><span class="icon">📄</span><code>carta.html</code></div></li>
+        </ul>
+      </li>
+      <li role="treeitem" aria-expanded="true">
+        <div class="dir"><span class="icon">📁</span><span class="muted">prueba</span></div>
+        <ul class="tree" role="group">
+          <li role="treeitem"><div class="file"><span class="icon">📄</span><code>prueba.html</code></div></li>
+        </ul>
+      </li>
+      <li role="treeitem" aria-expanded="true">
+        <div class="dir"><span class="icon">📁</span><span class="muted">subdir</span></div>
+        <ul class="tree" role="group">
+          <li role="treeitem" aria-expanded="true">
+            <div class="dir"><span class="icon">📁</span><span class="muted">direct</span></div>
+            <ul class="tree" role="group">
+              <li role="treeitem"><div class="file"><span class="icon">📄</span><code>textual.html</code></div></li>
+            </ul>
+          </li>
+          <li role="treeitem"><div class="file"><span class="icon">📄</span><code>docu.html</code></div></li>
+          <li role="treeitem"><div class="file"><span class="icon">📄</span><code>index.html</code></div></li>
+          <li role="treeitem"><div class="file"><span class="icon">📄</span><code>lista.html</code></div></li>
+        </ul>
+      </li>
+      <li role="treeitem"><div class="file"><span class="icon">📄</span><code>raiz.html</code></div></li>
+    </ul>
+  </main>
+</body>
+</html>
